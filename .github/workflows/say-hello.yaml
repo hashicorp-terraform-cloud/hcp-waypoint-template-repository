@@ -1,0 +1,17 @@
+name: Say Hello
+
+on:
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  push-metrics:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Say Hello
+      env:
+        PROJECT_NAME: ${{ secrets.PROJECT_NAME }}
+      run: echo "Hello from $PROJECT_NAME, created by HCP Waypoint!"
