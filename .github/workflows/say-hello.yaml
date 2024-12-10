@@ -11,7 +11,10 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v3
 
+    - name: Set Default Project Name
+      run: echo "DEFAULT_PROJECT_NAME=DefaultProject" >> $GITHUB_ENV
+
     - name: Say Hello
       env:
-        PROJECT_NAME: ${{ secrets.PROJECT_NAME }}
+        PROJECT_NAME: ${{ secrets.PROJECT_NAME || env.DEFAULT_PROJECT_NAME }}
       run: echo "Hello from $PROJECT_NAME, created by HCP Waypoint!"
