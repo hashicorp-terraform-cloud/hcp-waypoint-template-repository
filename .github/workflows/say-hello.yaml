@@ -3,7 +3,7 @@ name: Say Hello
 on:
   workflow_dispatch: # Allow manual trigger
 
-  repository_dispatch: # Allow trigger from repository_dispatch event driven by an HCP Waypoijnt action
+  repository_dispatch: # Allow trigger from repository_dispatch event driven by a HCP Waypoint action
     types:
       - hcp-waypoint-action
 
